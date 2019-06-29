@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Lista de Ususarios</title>
+    <title>Lista de Usuários</title>
     <spring:url var="css" value="/static/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="${css }"/>
 </head>
@@ -15,7 +15,6 @@
     <h1>Lista de Usuários</h1>
     <hr>
     <div>
-
 		<spring:url value="/usuario/cadastro" var="cadastro"/>
         <a class="btn btn-default" href="${cadastro }">Novo Usuário</a>
     </div>
