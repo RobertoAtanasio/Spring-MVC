@@ -19,6 +19,9 @@ import br.com.rapl.curso.dao.UsuarioDao;
 import br.com.rapl.curso.domain.TipoSexo;
 import br.com.rapl.curso.domain.Usuario;
 
+// o @ModelAttribute("usuario") faz a ligação da página com o controller
+// o RedirectAttributes attr é o responsável para a apresentação da mensagem na tela
+
 @Controller
 @RequestMapping("usuario")
 public class UsuarioController {
@@ -44,6 +47,7 @@ public class UsuarioController {
 			return "/user/add";
 		}
 		dao.salvar(usuario);
+		// a mensagem apresentada na tela list.jsp. Veja que "redirect:/usuario/todos" redireciona para a tela lisp.jsp
 		attr.addFlashAttribute("message", "Usuário salvo com sucesso.");
 		return "redirect:/usuario/todos";
 	}
