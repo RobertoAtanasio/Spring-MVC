@@ -1,5 +1,7 @@
 package br.com.rapl.curso.web.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,15 @@ public class UsuarioController {
 	public ModelAndView listaTodos(ModelMap model) {
 		model.addAttribute("usuarios", dao.getTodos());
 		return new ModelAndView("/user/list", model);
+	}
+	
+	// a requisição abaixo tem a mesma funcionalidade que a de cima. Muda apenas a forma de trabalhar com a requisição.
+	@RequestMapping(value = "/todos/mv", method = RequestMethod.GET)
+	public ModelAndView listaTodosMV() {
+		List<Usuario> usuarios = dao.getTodos();
+		ModelAndView mv = new ModelAndView("/user/list");
+		mv.addObject("usuarios", usuarios);
+		return mv;
 	}
 	
 	@GetMapping("/cadastro")
