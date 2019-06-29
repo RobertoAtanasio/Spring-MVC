@@ -5,12 +5,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.rapl.curso.domain.TipoSexo;
 import br.com.rapl.curso.domain.Usuario;
 
+@Repository
 public class UsuarioDaoImpl implements UsuarioDao {
 
-private static List<Usuario> us;
+	private static List<Usuario> us;
 	
 	public UsuarioDaoImpl() {
 		createUserList();
@@ -56,7 +59,8 @@ private static List<Usuario> us;
 	public Usuario getId(Long id) {
 		return us.stream()
 				.filter((u) -> u.getId().equals(id))
-				.collect(Collectors.toList()).get(0);
+				.collect(Collectors.toList())
+				.get(0);
 	}
 
 	@Override
