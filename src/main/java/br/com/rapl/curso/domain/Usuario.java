@@ -2,6 +2,7 @@ package br.com.rapl.curso.domain;
 
 import java.time.LocalDate;
 
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -14,14 +15,14 @@ public class Usuario {
 	private Long id;
 	
 	@NotBlank
-	@Size(min = 3, max = 50)
+	@Size(min = 3, max = 50)	// a mensagem do nome é obtido de outra forma
 	private String nome;
 	
 	@NotBlank
 	@Size(min = 3, max = 50, message = "Campo requerido entre {min} e {max} caracteres.")	
 	private String sobrenome;
 	
-	@NotNull(message = "O campo 'data de nascimento' é requerido.")
+	@NotNull(message = "O campo 'data de nascimento' é obrigatório.")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dtNascimento;
 	

@@ -23,6 +23,8 @@ import br.com.rapl.curso.domain.Usuario;
 
 // o @ModelAttribute("usuario") faz a ligação da página com o controller
 // o RedirectAttributes attr é o responsável para a apresentação da mensagem na tela
+// o argumento BindingResult result deve ficar ANTES do RedirectAttributes attrs
+// a mensagem de erro é apresentado no html por <form:errors path="nome" cssClass="label label-danger"/>
 
 @Controller
 @RequestMapping("usuario")

@@ -9,12 +9,13 @@
     <title>Lista de Usuários</title>
     <spring:url var="css" value="/static/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="${css }"/>
+    <!-- <link type="text/css" rel="stylesheet" href="/WEB-INF/resources/bootstrap/css/bootstrap.css"/> -->
 </head>
 <body>
 <div class="container">
     <h1>Lista de Usuários</h1>
     <hr>
-    <div>
+    <div>    
 		<spring:url value="/usuario/cadastro" var="cadastro"/>
         <a class="btn btn-default" href="${cadastro }">Novo Usuário</a>
     </div>
